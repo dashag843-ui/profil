@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Серф-а-ла-рус</title>
+    <link rel="stylesheet" href="style-vhod.css">
+    
+</head>
+<body>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        .nav-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            
+            /* ✅ Жестко заданные цвета */
+            background: #ffffff;              /* Белый фон */
+            border: 2px solid #4a7c8c;        /* Тёмно-бирюзовая граница (под цвет логотипа) */
+            
+            border-radius: 5px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            
+            max-width: 90%;
+            width: max-content;
+
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ✅ Для мобильных устройств */
+        @media (max-width: 768px) {
+            .nav-container {
+                top: 10px;
+                padding: 6px 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-link {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ✅ Для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .nav-container {
+                top: 5px;
+                padding: 5px 10px;
+                gap: 10px;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000000;
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #04514F;  /* ✅ Тот же цвет что и граница */
+        }
+
+        .nav-link.login {
+            font-weight: 700;
+            color: #04514F;
+        }
+
+        .nav-link.register {
+            color: #28a745;  /* ✅ Зелёный цвет для регистрации */
+            font-weight: 600;
+        }
+</style>
+
+<nav class="nav-container">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="index.html#offers-section" class="nav-link">Цены и акции</a>
+                <a href="bron.html" class="nav-link">Бронирование</a>
+                <a href="profil.html" class="nav-link">Личный кабинет</a>
+                <a href="vhod.html" class="nav-link login">Вход</a>
+                <a href="registr.html" class="nav-link register">Регистрация</a>
+            </nav>
+
+    <div class="login-container">
+        <h1 class="form-title">Океан скучал по тебе 🌊</h1>
+        
+        <form action="#" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Логин" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="Пароль" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Войти</button>
+        </form>
+
+        <div class="form-links">
+            <a href="#">Забыли пароль?</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

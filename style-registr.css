@@ -1,0 +1,149 @@
+
+        :root {
+            --bg-color: #fdfcf5;
+            --text-color: #333;
+            --input-border: #098EAC; /* Teal */
+            --input-bg: #ffffff;
+            --title-color: #098EAC;
+            --btn-orange: #ff9f43;
+            --btn-hover: #ff8c25;
+            --placeholder-color: #aaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            /* User will insert background image here */
+            background-image: 
+              linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* полупрозрачный слой */
+            url('picture/для\ входа\ и\ регистрации.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Main Form Container */
+        .registration-container {
+            background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--title-color);
+            margin-bottom: 20px;
+        }
+
+        /* Input Fields */
+        .form-group {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 20px;
+            margin-top: 10px;
+            border: 2px solid var(--input-border);
+            border-radius: 50px; /* Pill shape */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            background: var(--input-bg);
+            outline: none;
+            transition: all 0.3s;
+            color: #333;
+        }
+
+        .form-input::placeholder {
+            color: var(--placeholder-color);
+            font-size: 0.9rem;
+        }
+
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+            border-color: var(--title-color);
+        }
+
+        /* Date Input Specifics */
+        .date-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .date-icon {
+            position: absolute;
+            left: 20px;
+            width: 18px;
+            height: 18px;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .date-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--input-border);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--btn-orange);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 159, 67, 0.3);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .registration-container {
+                padding: 30px 20px;
+            }
+            .form-title {
+                font-size: 1.5rem;
+            }
+        }

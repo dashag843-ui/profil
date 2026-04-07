@@ -1,0 +1,424 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        :root {
+            --bg-color: #f2e8d5;
+            --text-color: #333;
+            --accent-teal: #4ecdc4;
+            --accent-dark-teal: #2c7a8c;
+            --accent-orange: #ff9f43;
+            --card-bg: #ffffff;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --btn-teal: #4ecdc4;
+            --btn-orange: #ff9f43;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            background-image: url(''); /* User will insert background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 50px;
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-dark-teal);
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* User Info Block */
+        .user-info-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .user-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-dark-teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        .user-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .user-name {
+            grid-column: 1 / -1;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-dark-teal);
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .bonus-points {
+            background: linear-gradient(135deg, var(--accent-orange), #ff8c25);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .bonus-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .bonus-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .user-actions {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-teal {
+            background: var(--btn-teal);
+            color: white;
+        }
+
+        .btn-teal:hover {
+            background: #3dbdb4;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-dark-teal);
+            color: var(--accent-dark-teal);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-dark-teal);
+            color: white;
+        }
+
+        /* My Rentals Section */
+        .rentals-section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-dark-teal);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--accent-dark-teal);
+        }
+
+        .rentals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .rental-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+
+        .rental-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            background: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-orange);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .board-brand {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-dark-teal);
+        }
+
+        .board-model {
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .board-id {
+            font-size: 0.8rem;
+            color: #999;
+            background: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 15px;
+        }
+
+        .board-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .spec-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .rental-dates {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+
+        .date-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .date-label {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .date-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent-dark-teal);
+        }
+
+        .pickup-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .pickup-location svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-teal);
+        }
+
+        .card-footer {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-extend {
+            flex: 1;
+            padding: 10px;
+            background: var(--btn-teal);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-extend:hover {
+            background: #3dbdb4;
+        }
+
+        .btn-return {
+            flex: 1;
+            padding: 10px;
+            background: white;
+            color: var(--accent-dark-teal);
+            border: 2px solid var(--accent-dark-teal);
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-return:hover {
+            background: var(--accent-dark-teal);
+            color: white;
+        }
+
+        /* Bottom Wave Decoration */
+        .bottom-wave {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20L0 0h40L20 20z' fill='%23a8d5ba' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .user-info-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .user-details {
+                grid-template-columns: 1fr;
+            }
+
+            .user-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .rentals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .board-specs {
+                grid-template-columns: 1fr;
+            }
+        }
+    

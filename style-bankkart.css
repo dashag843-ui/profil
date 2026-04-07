@@ -1,0 +1,288 @@
+
+        :root {
+            --bg-overlay: rgba(200, 200, 200, 0.6); /* Glass effect */
+            --card-bg-1: #d4e8f0; /* Light Blue */
+            --card-bg-2: #c4e8e3; /* Light Teal */
+            --card-bg-3: #d4e0f0; /* Light Indigo */
+            --text-color: #333;
+            --title-color: #fff;
+            --btn-white: #ffffff;
+            --btn-teal: #008c9e;
+            --status-green: #2ecc71;
+            --danger-red: #e74c3c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* User will insert beach background here */
+            background-image: url('picture/фон\ 3.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--text-color);
+        }
+
+        /* Main Container */
+        .cards-container {
+            background: var(--bg-overlay);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            width: 100%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .page-title {
+            color: var(--title-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        /* Individual Card */
+        .bank-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 160px;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .bank-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .bank-card.type-1 { background: var(--card-bg-1); }
+        .bank-card.type-2 { background: var(--card-bg-2); }
+        .bank-card.type-3 { background: var(--card-bg-3); }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-logos {
+            display: flex;
+            gap: 5px;
+            font-weight: 800;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+        
+        .logo-visa { color: #1a1f71; }
+        .logo-mc { color: #eb001b; }
+        .logo-mir { color: #0098db; }
+
+        .status-badge {
+            background: var(--status-green);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card-number {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .delete-btn:hover {
+            background: var(--danger-red);
+            color: white;
+        }
+
+        .delete-btn svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Add Button */
+        .add-card-btn {
+            background: var(--btn-white);
+            color: #333;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .add-card-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Modal / Form Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .add-form-container {
+            background: #fdfcf5; /* Beige from mockup */
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+            /* User can insert wave background here */
+            background-image: url('picture/bank.png'); 
+            background-size: contain;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+        }
+
+        .modal-overlay.active .add-form-container {
+            transform: translateY(0);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #4ecdc4;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .form-input::placeholder {
+            color: #aaa;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--btn-teal);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #007585;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            background: none;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .cards-container {
+                padding: 20px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    

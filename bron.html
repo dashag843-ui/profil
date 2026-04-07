@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование - Серф-а-ла-рус</title>
+    <!-- Montserrat for main text -->
+    <link rel="stylesheet" href="style-bron.css">
+    
+</head>
+<body>
+
+     <style>
+
+        .nav-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            
+            /* ✅ Жестко заданные цвета */
+            background: #ffffff;              /* Белый фон */
+            border: 2px solid #4a7c8c;        /* Тёмно-бирюзовая граница (под цвет логотипа) */
+            
+            border-radius: 5px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            
+            max-width: 90%;
+            width: max-content;
+        }
+
+        /* ✅ Для мобильных устройств */
+        @media (max-width: 768px) {
+            .nav-container {
+                top: 10px;
+                padding: 6px 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-link {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ✅ Для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .nav-container {
+                top: 5px;
+                padding: 5px 10px;
+                gap: 10px;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000000;
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #04514F;  /* ✅ Тот же цвет что и граница */
+        }
+
+        .nav-link.login {
+            font-weight: 700;
+            color: #04514F;
+        }
+
+        .nav-link.register {
+            color: #28a745;  /* ✅ Зелёный цвет для регистрации */
+            font-weight: 600;
+        }
+</style>
+
+<nav class="nav-container">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="index.html#offers-section" class="nav-link">Цены и акции</a>
+                <a href="bron.html" class="nav-link">Бронирование</a>
+                <a href="profil.html" class="nav-link">Личный кабинет</a>
+                <a href="vhod.html" class="nav-link login">Вход</a>
+                <a href="registr.html" class="nav-link register">Регистрация</a>
+            </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">Бронируем? Правильно делаем :)</h1>
+    </div>
+
+    <div class="booking-container">
+        
+        <!-- Top Section: Payment & User Info -->
+        <div class="top-section">
+            
+            <!-- Payment Dropdown -->
+            <div class="payment-wrapper">
+                <div class="payment-selector" id="paymentSelector">
+                    <span>Банковские карты</span>
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="dropdown-item" onclick="selectCard('Visa ****3783')">
+                        <span>Visa</span>
+                        <span>****3783</span>
+                    </div>
+                    <div class="dropdown-item" onclick="selectCard('MasterCard ****2941')">
+                        <span>MasterCard</span>
+                        <span>****2941</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Form -->
+            <div class="user-form">
+                <input type="text" class="form-input" placeholder="ФИО">
+                <input type="tel" class="form-input" placeholder="Номер телефон">
+                <input type="email" class="form-input" placeholder="Почта">
+            </div>
+        </div>
+
+        <!-- Middle Section: Selected Boards -->
+        <div class="boards-section">
+            <div class="board-card">
+                <div class="board-info">
+                    <div>Бренд: <strong>Firewire</strong></div>
+                    <div>Размер: <strong>6'2"</strong></div>
+                    <div>Объём: <strong>34L</strong></div>
+                    <div class="board-price">Хостинский пляж 1500 руб</div>
+                </div>
+            </div>
+
+            <div class="board-card">
+                <div class="board-info">
+                    <div>Бренд: <strong>JS Industrise</strong></div>
+                    <div>Размер: <strong>6'2"</strong></div>
+                    <div>Объём: <strong>34L</strong></div>
+                    <div class="board-price">Хостинский пляж 1500 руб</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dates Section -->
+        <div class="dates-section">
+            <div class="date-group">
+                <div class="date-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+                <div class="date-input-wrapper">
+                    <label class="date-label">Дата заезда</label>
+                    <input type="text" class="date-input" placeholder="ДД/ММ/ГГГГ">
+                </div>
+            </div>
+
+            <div class="date-group">
+                <div class="date-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+                <div class="date-input-wrapper">
+                    <label class="date-label">Дата выезда</label>
+                    <input type="text" class="date-input" placeholder="ДД/ММ/ГГГГ">
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Box -->
+        <div class="summary-box">
+            <div class="summary-details">
+                <div class="summary-row">
+                    <span class="summary-label">Дни:</span>
+                    <span class="summary-value">4</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Изначальная стоимость:</span>
+                    <span class="summary-value">6000 руб</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Скидка:</span>
+                    <span class="summary-value">5% (300руб)</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span class="summary-label">Итог:</span>
+                    <span class="summary-value">5700 руб</span>
+                </div>
+            </div>
+            <div class="summary-discount-note">
+                Скидка 5% на каждые 3 дня, максимум 25%
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn btn-add">+ Добавить ещё одну доску</button>
+            <button class="btn btn-book">Забронировать</button>
+        </div>
+
+    </div>
+
+    <div class="bottom-pattern"></div>
+
+    <script>
+        // Dropdown Logic
+        const selector = document.getElementById('paymentSelector');
+        const menu = document.getElementById('dropdownMenu');
+        const selectorText = selector.querySelector('span');
+
+        selector.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('show');
+            selector.classList.toggle('active');
+        });
+
+        function selectCard(cardName) {
+            selectorText.textContent = cardName;
+            menu.classList.remove('show');
+            selector.classList.remove('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!selector.contains(e.target)) {
+                menu.classList.remove('show');
+                selector.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

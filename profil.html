@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Серф-а-ла-рус</title>
+    <!-- Montserrat for main text -->
+    <link rel="stylesheet" href="style-profil.css">
+   
+</head>
+<body>
+
+<style>
+
+        .nav-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            
+            /* ✅ Жестко заданные цвета */
+            background: #ffffff;              /* Белый фон */
+            border: 2px solid #4a7c8c;        /* Тёмно-бирюзовая граница (под цвет логотипа) */
+            
+            border-radius: 5px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            
+            max-width: 90%;
+            width: max-content;
+        }
+
+        /* ✅ Для мобильных устройств */
+        @media (max-width: 768px) {
+            .nav-container {
+                top: 10px;
+                padding: 6px 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-link {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ✅ Для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .nav-container {
+                top: 5px;
+                padding: 5px 10px;
+                gap: 10px;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000000;
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #04514F;  /* ✅ Тот же цвет что и граница */
+        }
+
+        .nav-link.login {
+            font-weight: 700;
+            color: #04514F;
+        }
+
+        .nav-link.register {
+            color: #28a745;  /* ✅ Зелёный цвет для регистрации */
+            font-weight: 600;
+        }
+</style>
+
+<nav class="nav-container">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="index.html#offers-section" class="nav-link">Цены и акции</a>
+                <a href="bron.html" class="nav-link">Бронирование</a>
+                <a href="profil.html" class="nav-link">Личный кабинет</a>
+                <a href="vhod.html" class="nav-link login">Вход</a>
+                <a href="registr.html" class="nav-link register">Регистрация</a>
+            </nav>
+
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Личный кабинет 🏄</h1>
+            <p class="page-subtitle">Добро пожаловать обратно, серфер!</p>
+        </div>
+
+        <!-- User Info Block -->
+        <div class="user-info-card">
+            <div class="user-avatar">
+                Д
+            </div>
+            
+            <div class="user-details">
+                <div class="user-name">Дарья Гаврилова</div>
+                
+                <div class="info-item">
+                    <span class="info-label">Имя</span>
+                    <span class="info-value">Дарья</span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Фамилия</span>
+                    <span class="info-value">Гаврилова</span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Отчество</span>
+                    <span class="info-value">Александровна</span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Количество аренд</span>
+                    <span class="info-value">12</span>
+                </div>
+                
+                <div class="bonus-points">
+                    <div class="bonus-value">2,450 🌊</div>
+                    <div class="bonus-label">Surf Miles</div>
+                </div>
+                
+                <div class="user-actions">
+                    <a href="#" class="btn btn-teal">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                        Мои карты
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        Выйти
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Rentals Section -->
+        <div class="rentals-section">
+            <h2 class="section-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                Мои аренды
+            </h2>
+
+            <div class="rentals-grid">
+                <!-- Rental Card 1 -->
+                <div class="rental-card">
+                    <div class="card-image">
+                        <img src="" alt="Surfboard" style="display:none;" id="board-img-1">
+                        <div style="width:100%; height:100%; background:linear-gradient(135deg, #74ebd5, #ACB6E5); display:flex; align-items:center; justify-content:center; color:white; font-size:3rem;" id="board-ph-1">🏄</div>
+                        <span class="card-badge">Активна</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div>
+                                <div class="board-brand">Rusty</div>
+                                <div class="board-model">"The Hog"</div>
+                            </div>
+                            <span class="board-id">ID: SB-4821</span>
+                        </div>
+                        
+                        <div class="board-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Тип</span>
+                                <span class="spec-value">Шортборд</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Размер</span>
+                                <span class="spec-value">5'8"</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Объем</span>
+                                <span class="spec-value">28L</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Состояние</span>
+                                <span class="spec-value">Новое</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rental-dates">
+                            <div class="date-group">
+                                <span class="date-label">Начало аренды</span>
+                                <span class="date-value">15.07.2026</span>
+                            </div>
+                            <div class="date-group">
+                                <span class="date-label">Возврат</span>
+                                <span class="date-value">20.07.2026</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pickup-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Пляж Джоанна, точка №3</span>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn-extend">Продлить</button>
+                            <button class="btn-return">Вернуть</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rental Card 2 -->
+                <div class="rental-card">
+                    <div class="card-image">
+                        <img src="" alt="Surfboard" style="display:none;" id="board-img-2">
+                        <div style="width:100%; height:100%; background:linear-gradient(135deg, #f093fb, #f5576c); display:flex; align-items:center; justify-content:center; color:white; font-size:3rem;" id="board-ph-2">🏄</div>
+                        <span class="card-badge">Активна</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div>
+                                <div class="board-brand">Channel Islands</div>
+                                <div class="board-model">"Neck Beard"</div>
+                            </div>
+                            <span class="board-id">ID: LB-2193</span>
+                        </div>
+                        
+                        <div class="board-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Тип</span>
+                                <span class="spec-value">Лонгборд</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Размер</span>
+                                <span class="spec-value">9'2"</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Объем</span>
+                                <span class="spec-value">65L</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Состояние</span>
+                                <span class="spec-value">Б/У</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rental-dates">
+                            <div class="date-group">
+                                <span class="date-label">Начало аренды</span>
+                                <span class="date-value">18.07.2026</span>
+                            </div>
+                            <div class="date-group">
+                                <span class="date-label">Возврат</span>
+                                <span class="date-value">25.07.2026</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pickup-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Серф-кемп №1</span>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn-extend">Продлить</button>
+                            <button class="btn-return">Вернуть</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rental Card 3 -->
+                <div class="rental-card">
+                    <div class="card-image">
+                        <img src="" alt="Surfboard" style="display:none;" id="board-img-3">
+                        <div style="width:100%; height:100%; background:linear-gradient(135deg, #4facfe, #00f2fe); display:flex; align-items:center; justify-content:center; color:white; font-size:3rem;" id="board-ph-3">🏄</div>
+                        <span class="card-badge">Активна</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div>
+                                <div class="board-brand">Lost</div>
+                                <div class="board-model">"Mayhem"</div>
+                            </div>
+                            <span class="board-id">ID: FB-7654</span>
+                        </div>
+                        
+                        <div class="board-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Тип</span>
+                                <span class="spec-value">Фиш</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Размер</span>
+                                <span class="spec-value">5'4"</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Объем</span>
+                                <span class="spec-value">32L</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Состояние</span>
+                                <span class="spec-value">Новое</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rental-dates">
+                            <div class="date-group">
+                                <span class="date-label">Начало аренды</span>
+                                <span class="date-value">20.07.2026</span>
+                            </div>
+                            <div class="date-group">
+                                <span class="date-label">Возврат</span>
+                                <span class="date-value">23.07.2026</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pickup-location">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Склад в центре</span>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn-extend">Продлить</button>
+                            <button class="btn-return">Вернуть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-wave"></div>
+
+    <script>
+        // Image loader helper
+        function setupBoardImage(imgId, placeholderId) {
+            const img = document.getElementById(imgId);
+            const ph = document.getElementById(placeholderId);
+            
+            if(img && img.getAttribute('src')) {
+                img.onload = function() {
+                    img.style.display = 'block';
+                    ph.style.display = 'none';
+                };
+            }
+        }
+
+        setupBoardImage('board-img-1', 'board-ph-1');
+        setupBoardImage('board-img-2', 'board-ph-2');
+        setupBoardImage('board-img-3', 'board-ph-3');
+
+        // Button interactions (demo)
+        document.querySelectorAll('.btn-extend').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Функция продления аренды будет доступна скоро!');
+            });
+        });
+
+        document.querySelectorAll('.btn-return').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(confirm('Вы уверены, что хотите вернуть доску?')) {
+                    alert('Заявка на возврат отправлена!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

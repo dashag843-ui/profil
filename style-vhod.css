@@ -1,0 +1,141 @@
+
+        :root {
+            --bg-color: #fdfcf5;
+            --text-color: #333;
+            --input-border: #098EAC; /* Teal */
+            --input-bg: #ffffff;
+            --title-color: #098EAC;
+            --btn-orange: #ff9f43;
+            --btn-hover: #ff8c25;
+            --placeholder-color: #aaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            /* User will insert background image here */
+            background-image: 
+              linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* полупрозрачный слой */
+            url('picture/для\ входа\ и\ регистрации.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Main Form Container */
+        .login-container {
+            background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--title-color);
+            margin-bottom: 10px;
+        }
+
+        /* Input Fields */
+        .form-group {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 25px;
+            margin-top: 10px;
+            border: 2px solid var(--input-border);
+            border-radius: 50px; /* Pill shape */
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            background: var(--input-bg);
+            outline: none;
+            transition: all 0.3s;
+            color: #333;
+        }
+
+        .form-input::placeholder {
+            color: var(--placeholder-color);
+            font-size: 0.95rem;
+        }
+
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+            border-color: var(--title-color);
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--btn-orange);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 159, 67, 0.3);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Additional Links */
+        .form-links {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .form-links a {
+            color: var(--title-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .form-links a:hover {
+            color: var(--btn-orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            .form-title {
+                font-size: 1.4rem;
+            }
+        }
